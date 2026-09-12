@@ -1,0 +1,407 @@
+[index.html](https://github.com/user-attachments/files/32143280/index.html)
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無界傳奇3｜官方網站</title>
+<meta name="description" content="無界傳奇3 官方網站｜特色鑑定、詞綴系統、武器特效、西遊副本、轉生養成。">
+<style>
+:root{
+  --bg:#090909;
+  --bg2:#12100d;
+  --panel:#15120f;
+  --panel2:#1d1812;
+  --gold:#d6b15f;
+  --gold2:#f2d58c;
+  --line:rgba(214,177,95,.25);
+  --text:#ece7dc;
+  --muted:#aaa397;
+  --danger:#9c2d22;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(160,100,35,.18), transparent 34%),
+    linear-gradient(180deg,#0a0908,#0d0b09 45%,#070707);
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
+.topbar{
+  height:34px;border-bottom:1px solid rgba(255,255,255,.06);
+  color:#938d82;font-size:12px;display:flex;align-items:center;
+  background:#070707
+}
+.topbar .container{display:flex;justify-content:space-between}
+.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(8,8,8,.9);
+  border-bottom:1px solid var(--line)
+}
+.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{
+  display:flex;align-items:center;gap:14px;min-width:260px
+}
+.brand-mark{
+  width:46px;height:46px;border:1px solid var(--gold);
+  transform:rotate(45deg);
+  display:grid;place-items:center;
+  box-shadow:0 0 22px rgba(214,177,95,.15)
+}
+.brand-mark span{transform:rotate(-45deg);font-family:serif;color:var(--gold2);font-weight:700}
+.brand-title{font-family:serif;font-size:26px;letter-spacing:4px;font-weight:800}
+.brand-sub{font-size:10px;letter-spacing:3px;color:#8f8779;margin-top:3px}
+.menu{display:flex;align-items:center;gap:26px;font-size:14px}
+.menu a{color:#d8d2c8;position:relative;padding:28px 0}
+.menu a:after{
+  content:"";position:absolute;left:50%;right:50%;bottom:16px;height:1px;background:var(--gold);
+  transition:.25s
+}
+.menu a:hover{color:var(--gold2)}
+.menu a:hover:after{left:0;right:0}
+.nav-btn{
+  border:1px solid var(--gold);padding:10px 16px;color:var(--gold2);font-size:13px
+}
+.hero{
+  min-height:670px;position:relative;display:flex;align-items:center;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.98) 0%,rgba(8,8,8,.82) 38%,rgba(10,9,7,.24) 68%,rgba(7,7,7,.94) 100%),
+    radial-gradient(circle at 72% 36%, rgba(176,110,30,.32), transparent 24%),
+    linear-gradient(135deg,#18120b 0%,#0d0b09 44%,#20170c 72%,#080808 100%);
+  border-bottom:1px solid var(--line)
+}
+.hero:before{
+  content:"";position:absolute;inset:0;opacity:.16;
+  background-image:
+    repeating-linear-gradient(90deg,transparent 0 39px,rgba(255,255,255,.02) 40px),
+    repeating-linear-gradient(0deg,transparent 0 39px,rgba(255,255,255,.018) 40px);
+}
+.hero .container{position:relative;z-index:2}
+.hero-copy{max-width:700px;padding:92px 0}
+.kicker{color:var(--gold);font-size:13px;letter-spacing:6px;margin-bottom:18px}
+.hero h1{
+  margin:0;font-family:serif;font-size:74px;line-height:1;
+  letter-spacing:10px;color:#f3ead5;text-shadow:0 4px 28px rgba(0,0,0,.8)
+}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero h2{margin:22px 0 10px;font-size:22px;font-weight:500;letter-spacing:5px;color:#d4c8b0}
+.hero p{max-width:590px;color:#aaa397;line-height:1.9;font-size:14px}
+.hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-width:156px;height:48px;
+  border:1px solid var(--gold);font-weight:700;font-size:14px;letter-spacing:2px;
+  transition:.2s
+}
+.btn.primary{background:linear-gradient(180deg,#d8b666,#9e7736);color:#17110a;border-color:#e6ca82}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.hero-badge{
+  position:absolute;right:5%;bottom:66px;width:270px;padding:20px 22px;
+  border:1px solid var(--line);background:rgba(12,10,8,.72);
+  box-shadow:0 12px 40px rgba(0,0,0,.35)
+}
+.hero-badge strong{color:#e5d2a2}
+.hero-badge div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:13px}
+.hero-badge div:last-child{border-bottom:0}
+.online{color:#72c683}
+.section{padding:82px 0}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title small{color:var(--gold);letter-spacing:5px;font-size:11px}
+.section-title h3{font-family:serif;margin:10px 0 0;font-size:34px;letter-spacing:5px}
+.grid-news{display:grid;grid-template-columns:1.55fr .75fr;gap:24px}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(27,23,18,.9),rgba(15,13,11,.94));box-shadow:0 10px 34px rgba(0,0,0,.18)}
+.card-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
+.card-head h4{margin:0;font-size:17px;letter-spacing:2px}
+.card-head a{font-size:12px;color:var(--gold)}
+.news-list{padding:0 20px 8px}
+.news-item{display:grid;grid-template-columns:84px 1fr 90px;gap:12px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.news-item:last-child{border-bottom:0}
+.tag{font-size:11px;color:#d8c59c;border:1px solid rgba(214,177,95,.35);padding:5px 8px;text-align:center}
+.news-item a{font-size:14px}
+.date{font-size:12px;color:#777;text-align:right}
+.server-info{padding:6px 20px 16px}
+.info-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13px}
+.info-row:last-child{border-bottom:0}
+.info-row span:first-child{color:#928a7d}
+.features{background:linear-gradient(180deg,#0a0908,#0f0d0a)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feature{
+  min-height:218px;padding:24px;position:relative;overflow:hidden;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 80% 15%,rgba(214,177,95,.13),transparent 28%),
+    linear-gradient(180deg,#18140f,#0f0d0a)
+}
+.feature:before{
+  content:"";position:absolute;right:-20px;top:-25px;width:100px;height:100px;border:1px solid rgba(214,177,95,.12);transform:rotate(45deg)
+}
+.feature .num{font-family:serif;color:#55472f;font-size:44px;position:absolute;right:18px;bottom:8px}
+.feature h5{font-size:18px;margin:18px 0 10px;color:#ead7a9}
+.feature p{font-size:13px;color:#999186;line-height:1.75;margin:0}
+.icon{
+  width:44px;height:44px;border:1px solid rgba(214,177,95,.45);display:grid;place-items:center;color:var(--gold2);font-size:18px
+}
+.download{padding:76px 0;background:
+  linear-gradient(90deg,rgba(10,9,7,.96),rgba(20,14,7,.6),rgba(10,9,7,.96)),
+  radial-gradient(circle at 50% 50%,rgba(182,119,32,.2),transparent 32%);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+.download-inner{text-align:center}
+.download h3{font-family:serif;font-size:38px;letter-spacing:5px;margin:0 0 12px}
+.download p{color:#9e9689;font-size:13px}
+.download .hero-actions{justify-content:center}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px;gap:14px}
+.shot{
+  border:1px solid var(--line);position:relative;overflow:hidden;
+  background:
+    linear-gradient(135deg,rgba(172,108,25,.18),rgba(0,0,0,.28)),
+    radial-gradient(circle at 70% 30%,rgba(214,177,95,.17),transparent 22%),
+    #14110e
+}
+.shot:first-child{grid-row:span 2}
+.shot span{position:absolute;left:16px;bottom:14px;font-size:12px;color:#cbb98f}
+.footer{padding:38px 0;background:#060606;border-top:1px solid rgba(255,255,255,.06)}
+.footer-row{display:flex;justify-content:space-between;gap:24px;align-items:center}
+.footer small{color:#666;line-height:1.7}
+.footer-links{display:flex;gap:18px;font-size:12px;color:#948b7e}
+@media(max-width:900px){
+  .menu{display:none}
+  .nav-inner{height:66px}
+  .brand-title{font-size:21px}
+  .hero{min-height:610px}
+  .hero h1{font-size:52px;letter-spacing:6px}
+  .hero-badge{position:static;margin:0 0 54px;width:100%}
+  .grid-news{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .shot:first-child{grid-column:span 2;grid-row:auto}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 22px,1180px)}
+  .hero-copy{padding:70px 0 46px}
+  .hero h1{font-size:42px;letter-spacing:4px}
+  .hero h2{font-size:17px;letter-spacing:2px}
+  .feature-grid{grid-template-columns:1fr}
+  .news-item{grid-template-columns:64px 1fr}.date{display:none}
+  .gallery-grid{grid-template-columns:1fr}.shot:first-child{grid-column:auto}
+  .footer-row{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>無界傳奇3 官方網站</span>
+    <span>經典傳奇・全新玩法・長久經營</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">
+      <div class="brand-mark"><span>無界</span></div>
+      <div>
+        <div class="brand-title">無界傳奇3</div>
+        <div class="brand-sub">WUJIE MIR3</div>
+      </div>
+    </a>
+    <div class="menu">
+      <a href="#home">首頁</a>
+      <a href="#news">最新公告</a>
+      <a href="#features">遊戲特色</a>
+      <a href="#gallery">遊戲展示</a>
+      <a href="#download">下載專區</a>
+    </div>
+    <a class="nav-btn" href="#download">立即加入</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container">
+    <div class="hero-copy">
+      <div class="kicker">WUJIE MIR3 · OFFICIAL WEBSITE</div>
+      <h1>無界<em>傳奇3</em></h1>
+      <h2>打破界限，再戰瑪法。</h2>
+      <p>
+        保留傳奇核心戰鬥節奏，加入裝備鑑定、隨機詞綴、武器特殊效果、
+        轉生養成與特色副本。每一件裝備、每一條詞綴，都可能成為你的下一次突破。
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#download">立即下載</a>
+        <a class="btn" href="#features">查看特色</a>
+      </div>
+    </div>
+
+    <div class="hero-badge">
+      <div><span>伺服器</span><strong>無界傳奇3</strong></div>
+      <div><span>目前狀態</span><strong class="online">● 正常開放</strong></div>
+      <div><span>版本類型</span><strong>特色長久服</strong></div>
+      <div><span>官方網站</span><strong>wgmir3.github.io</strong></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="news">
+  <div class="container">
+    <div class="section-title">
+      <small>NEWS & NOTICE</small>
+      <h3>最新消息</h3>
+    </div>
+
+    <div class="grid-news">
+      <div class="card">
+        <div class="card-head">
+          <h4>官方公告</h4>
+          <a href="#">MORE +</a>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <span class="tag">重要</span>
+            <a href="#">無界傳奇3 官方網站正式啟用</a>
+            <span class="date">2026.09</span>
+          </div>
+          <div class="news-item">
+            <span class="tag">系統</span>
+            <a href="#">全新裝備鑑定：？？？ → 品質＋詞綴一次揭曉</a>
+            <span class="date">2026.09</span>
+          </div>
+          <div class="news-item">
+            <span class="tag">特色</span>
+            <a href="#">武器特殊效果：雷霆、寒冰、烈焰、梅開二度等</a>
+            <span class="date">2026.09</span>
+          </div>
+          <div class="news-item">
+            <span class="tag">副本</span>
+            <a href="#">西遊系列特色副本持續開放中</a>
+            <span class="date">2026.09</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h4>伺服器資訊</h4></div>
+        <div class="server-info">
+          <div class="info-row"><span>伺服器名稱</span><strong>無界傳奇3</strong></div>
+          <div class="info-row"><span>遊戲類型</span><strong>特色長久服</strong></div>
+          <div class="info-row"><span>核心玩法</span><strong>鑑定 / 詞綴 / 副本</strong></div>
+          <div class="info-row"><span>開服狀態</span><strong class="online">● ONLINE</strong></div>
+          <div class="info-row"><span>官方社群</span><strong>Facebook / Discord</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section features" id="features">
+  <div class="container">
+    <div class="section-title">
+      <small>GAME FEATURES</small>
+      <h3>遊戲特色</h3>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature">
+        <div class="icon">鑑</div>
+        <h5>裝備鑑定</h5>
+        <p>裝備掉落時先以「？？？」呈現，鑑定後一次揭曉品質與詞綴，讓每次掉寶都保有期待感。</p>
+        <span class="num">01</span>
+      </article>
+      <article class="feature">
+        <div class="icon">詞</div>
+        <h5>隨機詞綴</h5>
+        <p>裝備取得當下詞綴即鎖定，改造僅調整數值，不改變詞綴種類，保留真正的掉寶價值。</p>
+        <span class="num">02</span>
+      </article>
+      <article class="feature">
+        <div class="icon">武</div>
+        <h5>武器特效</h5>
+        <p>稀有以上武器有機會獲得雷霆、寒冰、烈焰、梅開二度、回春、回魔等特殊效果。</p>
+        <span class="num">03</span>
+      </article>
+      <article class="feature">
+        <div class="icon">魂</div>
+        <h5>轉生養成</h5>
+        <p>轉生不只是數字成長，搭配戰魂崛起與元素防禦上限提升，形成長線角色養成路線。</p>
+        <span class="num">04</span>
+      </article>
+      <article class="feature">
+        <div class="icon">西</div>
+        <h5>西遊副本</h5>
+        <p>白龍、蜘蛛精、白骨精、牛魔王、五指山、黑化悟空等章節式大型副本持續擴充。</p>
+        <span class="num">05</span>
+      </article>
+      <article class="feature">
+        <div class="icon">王</div>
+        <h5>BOSS 挑戰</h5>
+        <p>副本首領、地圖事件與限定首領各自擁有不同掉落與攻略節奏，適合單人與團隊挑戰。</p>
+        <span class="num">06</span>
+      </article>
+      <article class="feature">
+        <div class="icon">季</div>
+        <h5>期間活動</h5>
+        <p>節慶限定地圖、兌換素材、世界掉落與特殊首領，讓不同時期都有新的收集目標。</p>
+        <span class="num">07</span>
+      </article>
+      <article class="feature">
+        <div class="icon">無</div>
+        <h5>持續更新</h5>
+        <p>重視玩法完整度與版本特色，持續依測試結果調整，而不是單純堆疊倍率與數值。</p>
+        <span class="num">08</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-title">
+      <small>GAME GALLERY</small>
+      <h3>遊戲展示</h3>
+    </div>
+    <div class="gallery-grid">
+      <div class="shot"><span>大型副本 / BOSS 挑戰</span></div>
+      <div class="shot"><span>裝備鑑定</span></div>
+      <div class="shot"><span>武器特殊效果</span></div>
+      <div class="shot"><span>特色地圖</span></div>
+      <div class="shot"><span>轉生養成</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="container download-inner">
+    <div class="section-title" style="margin-bottom:20px">
+      <small>DOWNLOAD</small>
+      <h3>踏入無界，重返傳奇</h3>
+    </div>
+    <p>下載連結、登入器與安裝說明可放在這裡。之後你給我實際下載網址，我可以直接幫你接上。</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#">遊戲主程式</a>
+      <a class="btn" href="#">官方 Facebook</a>
+      <a class="btn" href="#">Discord</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div>
+      <div class="brand-title" style="font-size:20px">無界傳奇3</div>
+      <small>© 2026 WUJIE MIR3. All Rights Reserved.<br>本網站為遊戲資訊與玩家社群使用。</small>
+    </div>
+    <div class="footer-links">
+      <a href="#home">首頁</a>
+      <a href="#news">公告</a>
+      <a href="#features">特色</a>
+      <a href="#download">下載</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
