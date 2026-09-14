@@ -107,7 +107,13 @@ body:has(#features:target) #home,body:has(#equipment:target) #home,body:has(#wea
     margin-top:25px;
     padding-top:25px;
     border-top:1px solid rgba(214,177,95,.18);
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
     text-align:center;
+    box-sizing:border-box;
 ">
 
     <div style="
@@ -115,6 +121,7 @@ body:has(#features:target) #home,body:has(#equipment:target) #home,body:has(#wea
         font-size:20px;
         font-weight:bold;
         margin-bottom:8px;
+        text-align:center;
     ">
         💬 LINE 玩家交流群
     </div>
@@ -123,30 +130,47 @@ body:has(#features:target) #home,body:has(#equipment:target) #home,body:has(#wea
         color:#aaa397;
         font-size:14px;
         margin-bottom:18px;
+        text-align:center;
     ">
         掃描 QR Code 加入無界傳奇玩家交流群
     </div>
 
-    <img
-        src="QrCode.jpg"
-        alt="無界傳奇 LINE 玩家交流群 QR Code"
-        style="
-            width:180px;
-            max-width:70%;
-            height:auto;
-            background:#fff;
-            padding:8px;
-            border:1px solid #d6b15f;
-        "
-    >
+    <div style="
+        width:196px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin:0 auto;
+    ">
+        <img
+            src="QrCode.jpg"
+            alt="無界傳奇 LINE 玩家交流群 QR Code"
+            style="
+                display:block !important;
+                position:static !important;
+                float:none !important;
+                margin:0 auto !important;
+                width:180px !important;
+                height:auto !important;
+                max-width:180px !important;
+                background:#fff;
+                padding:8px;
+                border:1px solid #d6b15f;
+                box-sizing:border-box;
+            "
+        >
+    </div>
 
     <div style="
         margin-top:12px;
         color:#d6b15f;
         font-size:13px;
+        text-align:center;
     ">
         掃描 QR Code・加入群組・一起征戰無界
     </div>
+
+</div>
 
 </div>
 </section>
