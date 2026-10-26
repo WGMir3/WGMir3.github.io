@@ -804,26 +804,21 @@ style="display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;borde
 </div>
 
 <div class="affix-section">
-<h2>裝備階級 Tier</h2>
-<p>固定數值型詞綴會依裝備本身的需求等級再次套用階級倍率。越高階的裝備，固定數值詞綴能發揮的效果越高。</p>
-<div style="overflow-x:auto">
-<table class="affix-table">
-<thead><tr><th>裝備需求</th><th>Tier</th><th>固定數值倍率</th></tr></thead>
-<tbody>
-<tr><td>0～20級</td><td>Tier 1</td><td>30%</td></tr>
-<tr><td>21～40級</td><td>Tier 2</td><td>45%</td></tr>
-<tr><td>41～60級</td><td>Tier 3</td><td>60%</td></tr>
-<tr><td>61～80級</td><td>Tier 4</td><td>80%</td></tr>
-<tr><td>81級以上</td><td>Tier 5</td><td>100%</td></tr>
-<tr><td>1轉</td><td>Tier 3</td><td>60%</td></tr>
-<tr><td>2轉</td><td>Tier 4</td><td>80%</td></tr>
-<tr><td>3轉</td><td>Tier 5</td><td>100%</td></tr>
-<tr><td>4轉</td><td>Tier 6</td><td>120%</td></tr>
-<tr><td>5轉以上</td><td>Tier 7</td><td>140%</td></tr>
-</tbody>
-</table>
-</div>
-<p class="affix-note">固定數值以「基礎隨機值 × Tier 倍率」計算；有抽到正數詞綴時最低保留 1。</p>
+<h2>固定數值型詞綴｜裝備需求與稀世珍品倍率</h2>
+<p>固定數值詞綴以裝備品質抽出的基礎數值計算倍率。<b>一般裝備 0 轉依需求等級判斷；稀世珍品 0 轉固定 100%，不看需求等級。</b>轉生裝備則依裝備需求轉數增加倍率，判斷的是裝備需求，不是角色目前轉數。</p>
+<div style="overflow-x:auto"><table class="affix-table"><thead><tr><th>裝備需求</th><th>一般裝備固定數值倍率</th><th>稀世珍品固定數值倍率</th></tr></thead><tbody>
+<tr><td>0 轉：0～20 級</td><td>30%</td><td>100%</td></tr>
+<tr><td>0 轉：21～40 級</td><td>45%</td><td>100%</td></tr>
+<tr><td>0 轉：41～60 級</td><td>60%</td><td>100%</td></tr>
+<tr><td>0 轉：61～80 級</td><td>80%</td><td>100%</td></tr>
+<tr><td>0 轉：81 級以上</td><td>100%</td><td>100%</td></tr>
+<tr><td>1 轉</td><td>100%</td><td>120%</td></tr>
+<tr><td>2 轉</td><td>110%</td><td>130%</td></tr>
+<tr><td>3 轉</td><td>120%</td><td>140%</td></tr>
+<tr><td>4 轉</td><td>130%</td><td>150%</td></tr>
+<tr><td>5 轉以上</td><td>140%</td><td>160%</td></tr>
+</tbody></table></div>
+<p class="affix-note">稀世珍品的固定數值倍率以 100% 為基礎，轉生額外加成另外疊加；不再依稀世裝備的等級需求套用 30%～80% 的折減。固定數值計算時截去小數，正數詞綴最低保留 1。</p>
 </div>
 
 <div class="affix-section">
@@ -839,12 +834,12 @@ style="display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;borde
 </tbody></table></div>
 <p>計算方式：<b>原始詞綴數值 ×（1＋轉生加成＋稀世加成）</b>，結果四捨五入至整數（中間值遠離零）；非零詞綴最少保留 ±1。例如原始 10%、5 轉稀世珍品：10 × 1.9＝19%。</p>
 <p>適用能力包括：物理／魔法／道術攻擊%、生命／魔力%、物防／魔防%、施法速度、攻速%、冷卻縮減%、寵物移花%、暴擊率／傷害、會心、吸血、閃避／格擋／毒抗、經驗／掉寶／金幣倍率、施毒暴擊率／倍率、無視防禦、最終減傷%、麻痺／減速／沉默機率及反彈傷害等。</p>
-<p class="affix-note">僅影響新鑑定或重新改造時抽出的詞綴數值；原有固定數值型 Tier 倍率不重複加成。表格中的各品質數值為加成前的基礎範圍。</p>
+<p class="affix-note">僅影響新鑑定或重新改造時抽出的詞綴數值；固定數值型詞綴依上方新版倍率表計算，不與百分比／機率加成重複套用。表格中的各品質數值為加成前的基礎範圍。</p>
 </div>
 
 <div class="affix-section">
 <h2>固定數值型詞綴</h2>
-<p>以下詞綴會受到裝備 Tier 影響。表格中的數值為套用 Tier 前的「品質基礎隨機範圍」，最後再依裝備 Tier 倍率計算。</p>
+<p>以下詞綴會受到上方「一般／稀世珍品固定數值倍率」影響。表格為套用裝備需求倍率前的品質基礎隨機範圍。</p>
 <div style="overflow-x:auto">
 <table class="affix-table">
 <thead><tr><th>詞綴</th><th>普通</th><th>高級</th><th>稀有</th><th>史詩</th><th>傳說</th><th>神話</th></tr></thead>
@@ -858,12 +853,12 @@ style="display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;borde
 </tbody>
 </table>
 </div>
-<p class="affix-note">例如神話生命基礎為 700～1200；若裝備為 Tier 7（140%），最後固定生命數值會再套用 140% 計算。</p>
+<p class="affix-note">例如神話生命基礎為 700～1200；一般 5 轉裝備套用 140%，稀世珍品 5 轉裝備則套用 160%。</p>
 </div>
 
 <div class="affix-section">
 <h2>不受 Tier 影響的詞綴</h2>
-<p>以下為各品質抽出的<b>基礎數值</b>。一般等級需求裝備不額外加成；<b>轉生需求裝備的百分比／機率類詞綴</b>依轉數提高，稀世珍品還可額外疊加加成。固定數值詞綴仍使用原本 Tier 1～7 倍率。</p>
+<p>以下為各品質抽出的<b>基礎數值</b>。一般等級需求裝備不額外加成；<b>轉生需求裝備的百分比／機率類詞綴</b>依轉數提高，稀世珍品還可額外疊加加成。固定數值詞綴則使用上方新版一般／稀世倍率。</p>
 <div style="overflow-x:auto">
 <table class="affix-table">
 <thead><tr><th>詞綴</th><th>普通</th><th>高級</th><th>稀有</th><th>史詩</th><th>傳說</th><th>神話</th></tr></thead>
@@ -949,7 +944,7 @@ style="display:block;width:100%;max-width:1024px;height:auto;margin:0 auto;borde
 <div class="affix-section">
 <h2>打造不同流派</h2>
 <p>鑑定系統並非單純追求單一戰力數字。玩家可依職業與玩法選擇攻擊爆發、攻速／施法、坦克減傷、反傷、元素、施毒或打寶養成等不同搭配。</p>
-<p class="affix-note"><b>品質決定詞綴數值範圍，Tier 決定固定數值強度，特殊詞綴則決定裝備的玩法方向。</b></p>
+<p class="affix-note"><b>品質決定詞綴數值範圍，裝備需求與稀世倍率決定固定數值強度，特殊詞綴則決定裝備的玩法方向。</b></p>
 </div>
 
 </div>
